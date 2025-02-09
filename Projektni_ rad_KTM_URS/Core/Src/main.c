@@ -625,25 +625,13 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 	{
 		if (HAL_GPIO_ReadPin(GPIOC, pritisnut_pin) == GPIO_PIN_RESET)
 		{	// daje vrijednost zastavici ovisno o tome koji je pin pritisnut
-			if (pritisnut_pin == GPIO_PIN_5)
+			switch (pritisnut_pin)
 			{
-				zastava = 1;
-			}
-			if (pritisnut_pin == GPIO_PIN_6)
-			{
-				zastava = 2;
-			}
-			if (pritisnut_pin == GPIO_PIN_7)
-			{
-				zastava = 3;
-			}
-			if (pritisnut_pin == GPIO_PIN_8)
-			{
-				zastava = 4;
-			}
-			if (pritisnut_pin == GPIO_PIN_9)
-			{
-				zastava = 5;
+				case (GPIO_PIN_5): zastava = 1; break;
+				case (GPIO_PIN_6): zastava = 2; break;
+				case (GPIO_PIN_7): zastava = 3; break;
+				case (GPIO_PIN_8): zastava = 4; break;
+				case (GPIO_PIN_9): zastava = 5; break;
 			}
 		}
 		HAL_TIM_Base_Stop_IT(&htim6);	// zaustavlja counter
