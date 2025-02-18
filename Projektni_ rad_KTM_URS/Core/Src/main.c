@@ -515,7 +515,7 @@ int main(void)
 	  		  x1_tren = x0_tren + X0_U_X1 - R_KOLOT;	// izračun promjene x i z koordinati
 	  		  z1_tren = z0_tren + Z0_U_Z1;
 	  		  x1_tren = KRAK*cosf(acosf(x1_tren/KRAK) + 1*DEG_TO_RAD);
-	  		  z1_tren = KRAK*sinf(acosf(x1_tren/KRAK) + 1*DEG_TO_RAD);
+	  		  z1_tren = KRAK*sinf(asinf(z1_tren/KRAK) + 1*DEG_TO_RAD);
 	  		  x0_tren = x1_tren - X0_U_X1 + R_KOLOT;
 	  		  z0_tren = z1_tren - Z0_U_Z1;
 
@@ -533,7 +533,7 @@ int main(void)
 	  		  x1_tren = x0_tren + X0_U_X1 - R_KOLOT;	// izračun promjene x i z koordinati
 	  		  z1_tren = z0_tren + Z0_U_Z1;
 	  		  x1_tren = KRAK*cosf(acosf(x1_tren/KRAK) - 1*DEG_TO_RAD);
-	  		  z1_tren = KRAK*sinf(acosf(x1_tren/KRAK) - 1*DEG_TO_RAD);
+	  		  z1_tren = KRAK*sinf(asinf(z1_tren/KRAK) - 1*DEG_TO_RAD);
 	  		  x0_tren = x1_tren - X0_U_X1 + R_KOLOT;
 	  		  z0_tren = z1_tren - Z0_U_Z1;
 
